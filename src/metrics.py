@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from Typing import Union
+from typing import Union
 
 def bias(y_true: Union[pd.Series, np.array, list], y_pred: Union[pd.Series, np.array, list]):
     """
