@@ -1,5 +1,5 @@
 # Air Passenger Forecast
-
+![Airport Image](images/aiport.jpg)
 # Project Overview
 
 This project is about implementing ARIMA and SARIMA model for forecasting passenger that will visit one of the airports in the United States of America. The goal is to assist airport management in effectively allocating staff and facilities to handle the incoming passenger traffic.
