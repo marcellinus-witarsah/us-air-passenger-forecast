@@ -2,7 +2,7 @@
 ![Airport Image](images/aiport.jpg)
 # Project Overview
 
-This project is about implementing ARIMA and SARIMA model for forecasting passenger that will visit one of the airports in the United States of America. The goal is to assist airport management in effectively allocating staff and facilities to handle the incoming passenger traffic.
+This project is about implementing `ARIMA` and `SARIMA` model for forecasting passenger that will visit one of the airports in the United States of America. The goal is to assist airport management in effectively allocating staff and facilities to handle the incoming passenger traffic.
 
 
 # Installation and Setup
@@ -108,9 +108,25 @@ df = df.rename(columns={
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```
 
-## Exploratory Data Analysis
+# Results & Evaluation
+From this project, there are three key points:
+## 1. Dataset Behavior of Pre and Post Covid 19 Are Different
+Covid 19 is something that people would not expect because it shutted down almost all business sectors including flight business. This cause a changing in behavior of the dataset which can be seen in Figure 1. When we forecast using statistic models, this impacted the results drastically.
+![Passenger Count by Pre and Post Covid 19](/data/images/air_passenger_count.png)
+*Figure 1 Air Passenger Count Separated By Pre and Post Covid 19 Period*
 
-## Statistical Modelling
+## 2. Components of Pre Covid and Post Covid 19 Time Series Dataset
+The dataset behavior prior to Covid 19 has an **increasing trend** & **yearly seasonality**. From Figure 2, we could see the dataset separated by year are stacked on top of each other. This shows an increasing trend as year goes by the number of passenger count increases. We can also spot the same pattern which indicates yearly seasonality.
+![Components Passenger Count by Pre Covid 19](/data/images/precovid_components.png)
+*Figure 2 Trend and Seasonality Air Passenger Count Prior to Covid 19*
+
+The dataset after the Covid 19 has also an **increasing trens** & **yearly seasonality** as well. From Figur3, we can see an increasing trend due to the recovery phase after the Covid 19 breakout. We can also spot the same pattern that every July until August the number of air passenger was the higher throughout each year.
+![Components Passenger Count by Pre Covid 19](/data/images/postcovid_components.png)
+*Figure 2 Trend and Seasonality Air Passenger Count After Covid 19*
+
+3. Modelling and Evaluation of the dataset
+
+1. 
 
 ## Evaluation
 
