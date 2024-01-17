@@ -185,7 +185,7 @@ Incorporating seasonality into this type of dataset is impactfull in increasing 
 
 *Table 3 Model Forecast on Air Passenger Count for The Next 12 Months (from 1 November 2023 - 1 October 2024).*
 
-# Future work
-[] Leverage other libraries that are faster and efficient such as [StatsForecast](https://github.com/Nixtla/statsforecast)
-[] Modularize code for generate ARIMA and SARIMA model for reproducibility
-[] Create a simple website application to display this results
+# Future Work
+* [ ] Leverage other libraries that are faster and efficient such as [StatsForecast](https://github.com/Nixtla/statsforecast)
+* [ ] Modularize code for generate ARIMA and SARIMA model for reproducibility
+* [ ] Create a simple website application to display this results
