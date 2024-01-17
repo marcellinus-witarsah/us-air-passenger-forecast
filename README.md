@@ -116,18 +116,19 @@ Covid 19 is something that people would not expect because it shutted down almos
 *Figure 1 Air Passenger Count Separated By Pre and Post Covid 19 Period*
 
 ## 2. Components of Pre Covid and Post Covid 19 Time Series Dataset
-The dataset behavior prior to Covid 19 has an **increasing trend** & **yearly seasonality**. From Figure 2, we could see the dataset separated by year are stacked on top of each other. This shows an increasing trend as year goes by the number of passenger count increases. We can also spot the same pattern which indicates yearly seasonality.
+The dataset behavior prior to Covid 19 has an **increasing trend** & **yearly seasonality**. From Figure 2, we could see increasing trend of data in overall. This shows an increasing trend as year goes by the number of passenger count increases. We can also spot the same pattern which indicates yearly seasonality.
 ![Components Passenger Count by Pre Covid 19](/images/precovid_components.png)
 *Figure 2 Trend and Seasonality Air Passenger Count Prior to Covid 19*
 
-The dataset after the Covid 19 has also an **increasing trens** & **yearly seasonality** as well. From Figur3, we can see an increasing trend due to the recovery phase after the Covid 19 breakout. We can also spot the same pattern that every July until August the number of air passenger was the higher throughout each year.
+In Figure 3 shows that there are peaks at lag of 12, 24, etc. This support the existence of yearly patterns where the each observations has high correlation with its previous 12, 24, and so on lags.
+![Pre Covid 19 ACF Plot](/images/precovid_acf.png)
+*Figure 3 Pre Covid 19 ACF Plot*
+
+The dataset after the Covid 19 has also an **increasing trens** & **yearly seasonality** as well. From Figure 4, we can see an increasing trend due to the recovery phase after the Covid 19 breakout. We can also spot the same pattern that every July until August the number of air passenger was the higher throughout each year.
 ![Components Passenger Count by Pre Covid 19](/images/postcovid_components.png)
-*Figure 2 Trend and Seasonality Air Passenger Count After Covid 19*
+*Figure 4 Trend and Seasonality Air Passenger Count After Covid 19*
 
-3. Modelling and Evaluation of the dataset
+## 3. Modelling and Evaluation of the dataset
 
-1. 
-
-## Evaluation
 
 ## References
