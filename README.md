@@ -146,6 +146,8 @@ Here are the performance of ARIMA vs SARIMA on Pre Covid 19 test dataset. SARIMA
 | ARIMA  | -925,712.90 | 927,505.16 | 18.31% |
 | SARIMA | -120,876.19 | 131,763.17 | 2.73%  |
 
+*Table 1 Model Performance on Pre Covid 19 Testing Dataset.*
+
 | ![Components Passenger Count by Pre Covid 19](/images/precovid_forecast.png) |
 |:--:| 
 | *Figure 6 Model Forecast on Air Passenger Count for The Next 12 Months (Pre Covid 19).* |
@@ -155,6 +157,8 @@ Here are the performance of ARIMA vs SARIMA on Post Covid 19 test dataset. SARIM
 |--------|-------------|------------|--------|
 | ARIMA  | -1,044,922.42 | 1,045,578.08 | 20.73% |
 | SARIMA | 533,477.42   | 534,612.42  | 12.75% |
+
+*Table 2 Model Performance on Post Covid 19 Testing Dataset.*
 
 | ![Components Passenger Count by Pre Covid 19](/images/postcovid_forecast.png) |
 |:--:| 
