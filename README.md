@@ -2,7 +2,7 @@
 ![Airport Image](images/aiport.jpg)
 # Project Overview
 
-This project is about implementing `ARIMA` and `SARIMA` model for forecasting passenger that will visit one of the airports in the United States of America. The goal is to assist airport management in effectively allocating staff and facilities to handle the incoming passenger traffic.
+This project is about implementing autoregressive integrated moving average (`ARIMA`) and seasonal autoregressive integrated moving average (`SARIMA`) model for forecasting passenger that will visit one of the airports in the United States of America. The goal is to assist airport management in effectively allocating staff and facilities to handle the incoming passenger traffic.
 
 
 # Installation and Setup
@@ -111,24 +111,76 @@ df = df.rename(columns={
 # Results & Evaluation
 From this project, there are three key points:
 ## 1. Dataset Behavior of Pre and Post Covid 19 Are Different
-Covid 19 is something that people would not expect because it shutted down almost all business sectors including flight business. This cause a changing in behavior of the dataset which can be seen in Figure 1. When we forecast using statistic models, this impacted the results drastically.
-![Passenger Count by Pre and Post Covid 19](/images/air_passenger_count.png)
-*Figure 1 Air Passenger Count Separated By Pre and Post Covid 19 Period*
+Covid 19 is something that people would not expect because it shutted down almost all business sectors including flight business. This cause a changing in behavior of the dataset which can be seen in Figure 1. Relying on the past data is not viable option. This is the reason why the data is splitted. 
+| ![Passenger Count by Pre and Post Covid 19](/images/air_passenger_count.png) |
+|:--:| 
+| *Figure 1 Air Passenger Count Separated By Pre and Post Covid 19 Period.* |
 
 ## 2. Components of Pre Covid and Post Covid 19 Time Series Dataset
-The dataset behavior prior to Covid 19 has an **increasing trend** & **yearly seasonality**. From Figure 2, we could see increasing trend of data in overall. This shows an increasing trend as year goes by the number of passenger count increases. We can also spot the same pattern which indicates yearly seasonality.
-![Components Passenger Count by Pre Covid 19](/images/precovid_components.png)
-*Figure 2 Trend and Seasonality Air Passenger Count Prior to Covid 19*
+The dataset behavior prior to Covid 19 has an **increasing trend** and **yearly seasonality**. From Figure 2, we could see increasing trend of data in overall. This shows an increasing trend as year goes by the number of passenger count increases. We can also spot the same pattern which indicates yearly seasonality.
+| ![Components Passenger Count by Pre Covid 19](/images/precovid_components.png) |
+|:--:| 
+| *Figure 2 Trend and Seasonality Air Passenger Count Prior to Covid 19.* |
 
 In Figure 3 shows that there are peaks at lag of 12, 24, etc. This support the existence of yearly patterns where the each observations has high correlation with its previous 12, 24, and so on lags.
-![Pre Covid 19 ACF Plot](/images/precovid_acf.png)
-*Figure 3 Pre Covid 19 ACF Plot*
+| ![Pre Covid 19 ACF Plot](/images/precovid_acf.png) | 
+|:--:| 
+| *Figure 3 Pre Covid 19 ACF Plot.* |
 
-The dataset after the Covid 19 has also an **increasing trens** & **yearly seasonality** as well. From Figure 4, we can see an increasing trend due to the recovery phase after the Covid 19 breakout. We can also spot the same pattern that every July until August the number of air passenger was the higher throughout each year.
-![Components Passenger Count by Pre Covid 19](/images/postcovid_components.png)
-*Figure 4 Trend and Seasonality Air Passenger Count After Covid 19*
+The dataset after the Covid 19 has also an **increasing trens** and **yearly seasonality** as well. From Figure 4, we can see an increasing trend due to the recovery phase after the Covid 19 breakout. We can also spot the same pattern that every July until August the number of air passenger was the higher throughout each year.
+| ![Components Passenger Count by Post Covid 19](/images/postcovid_components.png) |
+|:--:| 
+| *Figure 4 Trend and Seasonality Air Passenger Count After Covid 19.* |
 
 ## 3. Modelling and Evaluation of the dataset
+The best statistical model for this project is `SARIMA` which is a combination of **autoregression** (take into account n-lags values), **differentiation**, **moving average** (take into account n-lags noises), and **seasonality** (take into account pattern at n-lag for each observations). 
+
+The evaluation metric that we used are: 
+- **Bias**: average difference between actual and predicted values. The purpose of this metrics just to know if we overshoot (positive) or undershoot (negative) the forecast.
+- **Mean Absolute Error (MAE)**: average absolute difference between actual and predicted values. The purpose is just to know how far the forecast from the actual value in absolute manner.
+- **Mean Absolute Percentage Error (MAPE)**: average absolute percentage difference between actual and predicted values. The puprpose is to just to know how big the residuals (forecast - actual) relative to the actual value.
+
+Here are the performance of ARIMA vs SARIMA on Pre Covid 19 test dataset. SARIMA definitely outperforms SARIMA.
+|        | Bias       | MAE       | MAPE%  |
+|--------|------------|-----------|--------|
+| ARIMA  | -925,712.90 | 927,505.16 | 18.31% |
+| SARIMA | -120,876.19 | 131,763.17 | 2.73%  |
+
+| ![Components Passenger Count by Pre Covid 19](/images/precovid_forecast.png) |
+|:--:| 
+| *Figure 6 Model Forecast on Air Passenger Count for The Next 12 Months (Pre Covid 19).* |
+
+Here are the performance of ARIMA vs SARIMA on Post Covid 19 test dataset. SARIMA definitely outperforms SARIMA.
+|        | Bias        | MAE        | MAPE%  |
+|--------|-------------|------------|--------|
+| ARIMA  | -1,044,922.42 | 1,045,578.08 | 20.73% |
+| SARIMA | 533,477.42   | 534,612.42  | 12.75% |
+
+| ![Components Passenger Count by Pre Covid 19](/images/postcovid_forecast.png) |
+|:--:| 
+| *Figure 6 Model Forecast on Air Passenger Count for The Next 12 Months (Post Covid 19).* |
 
 
-## References
+## Conclusion
+Incorporating seasonality into this type of dataset is impactfull in increasing forecast performance for both dataset. But the recent data was 1 October 2023 and the forecast for the next 12 months will be, around `54,909,397` in total passenger count. For the break down by months you can see Table 3.
+
+|  Date       | Passenger Count|
+|-------------|----------------|
+|  2023-11-01 |       4,125,989|
+|  2023-12-01 |       4,217,649|
+|  2024-01-01 |       3,831,677|
+|  2024-02-01 |       3,609,890|
+|  2024-03-01 |       4,339,008|
+|  2024-04-01 |       4,450,808|
+|  2024-05-01 |       4,845,277|
+|  2024-06-01 |       5,145,179|
+|  2024-07-01 |       5,432,148|
+|  2024-08-01 |       5,199,164|
+|  2024-09-01 |       4,797,180|
+|  2024-10-01 |       4,915,428|
+*Table 3 Model Forecast on Air Passenger Count for The Next 12 Months (from 1 November 2023 - 1 October 2024).*
+
+## Future work
+[] Leverage other libraries that are faster and efficient such as [StatsForecast](https://github.com/Nixtla/statsforecast)
+[] Modularize code for generate ARIMA and SARIMA model for reproducibility
+[] Create a simple website application to display this results
