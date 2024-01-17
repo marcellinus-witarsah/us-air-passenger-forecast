@@ -178,6 +178,7 @@ Incorporating seasonality into this type of dataset is impactfull in increasing 
 |  2024-08-01 |       5,199,164|
 |  2024-09-01 |       4,797,180|
 |  2024-10-01 |       4,915,428|
+
 *Table 3 Model Forecast on Air Passenger Count for The Next 12 Months (from 1 November 2023 - 1 October 2024).*
 
 # Future work
