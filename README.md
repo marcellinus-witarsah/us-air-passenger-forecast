@@ -161,7 +161,7 @@ Here are the performance of ARIMA vs SARIMA on Post Covid 19 test dataset. SARIM
 | *Figure 6 Model Forecast on Air Passenger Count for The Next 12 Months (Post Covid 19).* |
 
 
-## Conclusion
+# Conclusion
 Incorporating seasonality into this type of dataset is impactfull in increasing forecast performance for both dataset. But the recent data was 1 October 2023 and the forecast for the next 12 months will be, around `54,909,397` in total passenger count. For the break down by months you can see Table 3.
 
 |  Date       | Passenger Count|
@@ -180,7 +180,7 @@ Incorporating seasonality into this type of dataset is impactfull in increasing 
 |  2024-10-01 |       4,915,428|
 *Table 3 Model Forecast on Air Passenger Count for The Next 12 Months (from 1 November 2023 - 1 October 2024).*
 
-## Future work
+# Future work
 [] Leverage other libraries that are faster and efficient such as [StatsForecast](https://github.com/Nixtla/statsforecast)
 [] Modularize code for generate ARIMA and SARIMA model for reproducibility
 [] Create a simple website application to display this results
