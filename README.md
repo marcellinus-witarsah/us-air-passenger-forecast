@@ -188,4 +188,4 @@ Incorporating seasonality into this type of dataset is impactfull in increasing 
 # Future Work
 * [ ] Leverage other libraries that are faster and efficient such as [StatsForecast](https://github.com/Nixtla/statsforecast)
 * [ ] Modularize code for generate ARIMA and SARIMA model for reproducibility
-* [ ] Create a simple website application to display this results
+* [ ] Implement other statistic models such as Exponential Smoothing
